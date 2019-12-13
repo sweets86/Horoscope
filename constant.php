@@ -1,5 +1,5 @@
 
 
 <?php
-    define("Title", "Horoscope")
+    define("Title", "Search for your Horoscope")
 ?>
