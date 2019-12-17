@@ -49,7 +49,7 @@ function update() {
     let method = "POST"
 
     formData = new FormData()
-    formData.set = ("date", "03-21")
+    formData.set = ("date", date)
 
     fetch(url, {
         method: method,
@@ -76,7 +76,7 @@ function remove() {
     let method = "DELETE"
 
     formData = new FormData()
-    formData.set = ("date", "03-21")
+    formData.set = ("date", date)
 
     fetch(url, {
         method: method,
