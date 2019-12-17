@@ -9,22 +9,25 @@ if (isset($_SERVER["REQUEST_METHOD"])) {
 
     if ($_SERVER["REQUEST_METHOD"] === "GET") {
         
-        if(isset($_GET["Date"])) {
+        if(isset($_SESSION["horoscope"])) {
 
-            $_SESSION["Date"] = serialize($_GET["03-21"]);
+            echo json_encode(unserialize($_SESSION["horoscope"]));
+            exit;
 
-            echo json_encode(unserialize($_SESSION["Date"]));
         } else {
-            echo json_encode("Date is not set in body");
+            echo json_encode(false);
+            exit;
         }
-
+        
     }else {
         echo json_encode("not a Get method");
+        exit;
     }
-
+    
 } else {
     echo json_encode("No valid request");
-
+    exit;
+    
 }
 
 ?>

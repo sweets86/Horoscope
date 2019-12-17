@@ -7,41 +7,34 @@ session_start();
 
 
 if (isset($_SERVER["REQUEST_METHOD"])) {
-    
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-        if(!isset($_SESSION["horoscope"])){
+        if (!isset($_SESSION["horoscope"])) {
 
-            if(isset($_POST["date"])) {
-                
+            if (isset($_POST["date"])) {
+
                 $horoscope = getHoroscope($_POST["date"]);
                 $_SESSION["horoscope"] = serialize($horoscope);
-    
                 echo json_encode(true);
+                error_log("hallo");
                 exit;
-                
             } else {
                 echo json_encode("Date is not set in body");
                 exit;
             }
-        }else {
+        } else {
             
             echo json_encode(false);
             exit;
         }
-
-        // Om horoscope finns sparat i session
-        
-
-    }else {
+    } else {
         echo json_encode("not a Post method");
         exit;
     }
-
 } else {
     echo json_encode("No valid request");
     exit;
-
 }
 
 
