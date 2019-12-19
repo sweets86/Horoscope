@@ -3,13 +3,12 @@
 window.onload = main
 
 function main() {
+
 }
 
 function saveButton() {
     const date = document.getElementById("input").value
-
-    console.log(date)
-
+    
     post(date)
 
 }
@@ -26,7 +25,6 @@ function post(date) {
         method: method,
         body: formData
     }).then((response) => {
-        console.log(response)
         return response.json()
     }).then((result) => {
         console.log(result)
@@ -40,20 +38,21 @@ function post(date) {
 }
 
 function updateButton() {
-    const clear = document.getElementById("input").value
-    input.value = ""
+    const show = document.getElementById("input").value
 
-    update()
+    update(show)
 }
 
-function update() {
+function update(show) {
     let url = "./server/updateHoroscope.php"
     let method = "POST"
+    let formData = new FormData()
+    formData.set("date", show)
 
     fetch(url, {
         method: method,
+        body: formData
     }).then((response) => {
-        console.log(response)
         return response.json()
     }).then((result) => {
         console.log(result)
@@ -79,7 +78,6 @@ function remove() {
     fetch(url, {
         method: method
     }).then((response) => {
-        console.log(response)
         return response.json()
     }).then((body) => {
         console.log(body)
@@ -94,7 +92,6 @@ function viewHoroscope() {
     fetch(url, {
         method: method
     }).then((response) => {
-        console.log(response)
         return response.json()
     }).then((result) => {
         const h1 = document.querySelector("h1")
