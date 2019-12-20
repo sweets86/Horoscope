@@ -8,7 +8,7 @@ function main() {
 
 function saveButton() {
     const date = document.getElementById("input").value
-    
+
     post(date)
 
 }
@@ -101,7 +101,3 @@ function viewHoroscope() {
         console.log("Error: ", err)
     })
 }
-
-
-/* let formData = new FormData()
-formData.set("date", date) */
