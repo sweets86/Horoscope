@@ -37,10 +37,4 @@ if (isset($_SERVER["REQUEST_METHOD"])) {
     exit;
 }
 
-
-
-/* 
-            $_SESSION["Date"] = serialize($_POST["date"]);
-
-            echo json_encode(unserialize($_SESSION["Date"])); */
 ?>
