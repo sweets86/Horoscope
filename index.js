@@ -2,10 +2,6 @@
 
 window.onload = main
 
-function main() {
-
-}
-
 function saveButton() {
     const date = document.getElementById("input").value
 
