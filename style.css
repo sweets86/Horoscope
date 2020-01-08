@@ -30,12 +30,30 @@ h1 {
 
 #saveButton {
     display: inline;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
 }
 
 #updateButton {
-    display: inline;
+    display: none;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
 }
 
 #deleteButton {
     display: none;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
 }
