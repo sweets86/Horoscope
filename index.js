@@ -3,22 +3,18 @@
 window.onload = main
 
 function main() {
-
+    viewHoroscope()
 }
 
-function saveButton() {
-    
+function toSaveButton() {
     const date = document.getElementById("input").value
-
-    post(date)
-
+    addHoroscope(date)
 }
 
-function post(date) {
+function addHoroscope(date) {
 
     let url = "./server/addHoroscope.php"
     let method = "POST"
-
     let formData = new FormData()
     formData.set("date", date)
 
@@ -36,19 +32,14 @@ function post(date) {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-
 }
 
-function updateButton() {
-
+function toUpdateButton() {
     const show = document.getElementById("input").value
-
-    update(show)
-
+    updateHoroscope(show)
 }
 
-function update(show) {
-
+function updateHoroscope(show) {
     let url = "./server/updateHoroscope.php"
     let method = "POST"
     let formData = new FormData()
@@ -67,23 +58,18 @@ function update(show) {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-
 }
 
-function deleteButton() {
-
+function toDeleteButton() {
     document.getElementById("input").value = ""
-
     const removeH1 = document.querySelector("h1")
     removeH1.innerHTML = ""
-
-    remove()
+    
+    deleteHoroscope()
     console.log("delete")
-
 }
 
-function remove() {
-
+function deleteHoroscope() {
     let url = "./server/deleteHoroscope.php"
     let method = "DELETE"
 
@@ -97,11 +83,9 @@ function remove() {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-
 }
 
 function viewHoroscope() {
-
     let url = "./server/viewHoroscope.php"
     let method = "GET"
 
@@ -121,11 +105,9 @@ function viewHoroscope() {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-
 }
 
 function clearButton(button1, button2, button3) {
-
     const saveButton = document.getElementById("saveButton")
     const updateButton = document.getElementById("updateButton")
     const deleteButton = document.getElementById("deleteButton")
@@ -133,5 +115,4 @@ function clearButton(button1, button2, button3) {
     saveButton.style.display = button1
     updateButton.style.display = button2
     deleteButton.style.display = button3
-
 }

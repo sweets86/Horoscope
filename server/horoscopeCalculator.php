@@ -18,30 +18,27 @@ function getHoroscope($inputDate)
     );
 
     $inputDateArr = explode("-", $inputDate);
-    $inputMonth = (int)$inputDateArr[1];
-    $inputDay = (int)$inputDateArr[2];
-
+    $inputMonth = (int) $inputDateArr[1];
+    $inputDay = (int) $inputDateArr[2];
 
     foreach ($horoscope as $key => $value) {
         $dates = explode(":", $value);
-        $fromMonth = (int)$dates[0];
-        $fromDate = (int)$dates[1];
-        $toMonth = (int)$dates[2];
-        $toDate = (int)$dates[3];
+        $fromMonth = (int) $dates[0];
+        $fromDate = (int) $dates[1];
+        $toMonth = (int) $dates[2];
+        $toDate = (int) $dates[3];
 
-        if($inputMonth == $fromMonth) {
-            if($inputDay >= $fromDate) {
+        if ($inputMonth == $fromMonth) {
+            if ($inputDay >= $fromDate) {
                 return $key;
             }
         }
-        
-        if($inputMonth == $toMonth) {
-            if($inputDay <= $toDate) {
+        if ($inputMonth == $toMonth) {
+            if ($inputDay <= $toDate) {
                 return $key;
             }
         }
     }
 }
-
 
 ?>
